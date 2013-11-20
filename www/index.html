@@ -58,7 +58,12 @@
                         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <table width="100%">
+                            <tr>
+                                <td><img alt="" id="myImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" /></td>
+                                <td><div id="myDesc"></div></td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -103,14 +108,22 @@
                 ];
                 var list = $('#list');
                 for (var i = 0; i < data.length; i++) {
-                    var t = ['<a href="#" class="list-group-item " data-toggle="modal" data-target="#myModal">',
+                    var t = ['<a href="#" class="list-group-item " data-toggle="modal" data-target="#myModal" data-id="', data[i].id, '">',
                         '<h3 class="list-group-item-heading">', '<img src="', data[i].path, '" height="60" />&nbsp;', data[i].name, '</h3>',
                         '</a>'].join('');
                     list.append(t);
                 }
 
-                $('#myModal').on('show.bs.modal', function(a,b,c) {
-                   console.log(a,b,c);
+                $('#myModal').on('show.bs.modal', function(a, b, c) {
+                    dataId = $(a.relatedTarget).data('id');
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].id == dataId) {
+                            $('#myModalLabel').html(data[i].name);
+                            $('#myImg').attr('src', data[i].path);
+                            $('#myDesc').html(data[i].name);
+                        }
+                    }
+
                 });
 
             });
