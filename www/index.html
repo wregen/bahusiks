@@ -1,42 +1,119 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Bahusiks</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <!-- Docs master nav -->
+        <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand">Bahusiks</span>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a id="home" href="#">Home</a>
+                        </li>
+                        <li>
+                            <a id="about" href="#">About</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <br />
+            <br />
+            <br />
+            <div class="list-group" id="list">
             </div>
         </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                var data = [
+                    {"id": "1", "name": "Aldemedus", "path": ".\/img\/bahus\/Aldemedus.jpg"},
+                    {"id": "2", "name": "Beczkus", "path": ".\/img\/bahus\/Beczkus.jpg"},
+                    {"id": "3", "name": "Brukus", "path": ".\/img\/bahus\/Brukus.jpg"},
+                    {"id": "4", "name": "Ciekawek", "path": ".\/img\/bahus\/Ciekawek.jpg"},
+                    {"id": "5", "name": "Ciepłolubikus", "path": ".\/img\/bahus\/Ciepłolubikus.jpg"},
+                    {"id": "6", "name": "Clubikus", "path": ".\/img\/bahus\/Clubikus.jpg"},
+                    {"id": "7", "name": "Degustikus", "path": ".\/img\/bahus\/Degustikus.jpg"},
+                    {"id": "8", "name": "Huberticus", "path": ".\/img\/bahus\/Huberticus.jpg"},
+                    {"id": "9", "name": "Hubertus Wagnerus", "path": ".\/img\/bahus\/Hubertus Wagnerus.jpg"},
+                    {"id": "10", "name": "Informatikus Ekonomikus", "path": ".\/img\/bahus\/Informatikus Ekonomikus.jpg"},
+                    {"id": "11", "name": "Kredytus", "path": ".\/img\/bahus\/Kredytus.jpg"},
+                    {"id": "12", "name": "Magikus Zamiennikus", "path": ".\/img\/bahus\/Magikus Zamiennikus.jpg"},
+                    {"id": "13", "name": "Makusynus Cudakus Wspaniały", "path": ".\/img\/bahus\/Makusynus Cudakus Wspaniały.jpg"},
+                    {"id": "14", "name": "Nieruchomix", "path": ".\/img\/bahus\/Nieruchomix.jpg"},
+                    {"id": "15", "name": "Obserwatikus Młodzieńczy", "path": ".\/img\/bahus\/Obserwatikus Młodzieńczy.jpg"},
+                    {"id": "16", "name": "Odpadek", "path": ".\/img\/bahus\/Odpadek.jpg"},
+                    {"id": "17", "name": "Palmix", "path": ".\/img\/bahus\/Palmix.jpg"},
+                    {"id": "18", "name": "Partnerus Turistikus", "path": ".\/img\/bahus\/Partnerus Turistikus.jpg"},
+                    {"id": "19", "name": "Pędzibeczek", "path": ".\/img\/bahus\/Pędzibeczek.jpg"},
+                    {"id": "20", "name": "Questina", "path": ".\/img\/bahus\/Questina.jpg"},
+                    {"id": "21", "name": "Rzepikus Rogalikus", "path": ".\/img\/bahus\/Rzepikus Rogalikus.jpg"},
+                    {"id": "22", "name": "Skrybikus Młodszy", "path": ".\/img\/bahus\/Skrybikus Młodszy.jpg"},
+                    {"id": "23", "name": "Transportikus", "path": ".\/img\/bahus\/Transportikus.jpg"},
+                    {"id": "24", "name": "Uzetikus", "path": ".\/img\/bahus\/Uzetikus.jpg"},
+                    {"id": "25", "name": "Wiatrakus", "path": ".\/img\/bahus\/Wiatrakus.jpg"},
+                    {"id": "26", "name": "Wiertikus Mocarny", "path": ".\/img\/bahus\/Wiertikus Mocarny.jpg"},
+                    {"id": "27", "name": "Winolubikus", "path": ".\/img\/bahus\/Winolubikus.jpg"}
+                ];
+                var list = $('#list');
+                for (var i = 0; i < data.length; i++) {
+                    var t = ['<a href="#" class="list-group-item " data-toggle="modal" data-target="#myModal">',
+                        '<h3 class="list-group-item-heading">', '<img src="', data[i].path, '" height="60" />&nbsp;', data[i].name, '</h3>',
+                        '</a>'].join('');
+                    list.append(t);
+                }
+
+                $('#myModal').on('show.bs.modal', function(a,b,c) {
+                   console.log(a,b,c);
+                });
+
+            });
         </script>
     </body>
 </html>
