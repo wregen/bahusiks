@@ -3,7 +3,7 @@ var flatiron = require('flatiron'),
         app = flatiron.app,
         path = require('path'),
         directory = './www/',
-        port = process.env.PORT;
+        port = process.env.PORT || 8080;
 
 // flatiron plugins
 app.use(flatiron.plugins.http);
@@ -13,7 +13,7 @@ app.http.before = [
     ecstatic(directory)
 ];
 
-app.start(port || 8080);
+app.start(port);
 app.log.info("App started on port " + port);
 // CTRL+C (sigint)
 process.on('SIGINT', function() {
