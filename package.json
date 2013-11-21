@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "private": false,
   "dependencies": {
-    "flatiron": "*",
-    "ecstatic": "*",
-    "union": "*"
+    "express": "*",
+    "ecstatic": "*"
   },
   "scripts": {
     "start": "node app.js"

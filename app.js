@@ -1,20 +1,14 @@
-var flatiron = require('flatiron'),
+var http = require('http'),
+        express = require('express'),
         ecstatic = require('ecstatic'),
-        app = flatiron.app,
-        path = require('path'),
         directory = './www/',
         port = process.env.PORT || 8080;
 
-// flatiron plugins
-app.use(flatiron.plugins.http);
+var app = express();
+app.use(ecstatic({root: directory}));
+http.createServer(app).listen(port);
+console.log('Listening on :' + port);
 
-// flatiron - ecstatic (server resources from directory - html, css, js, images)
-app.http.before = [
-    ecstatic(directory)
-];
-
-app.start(port);
-app.log.info("App started on port " + port);
 // CTRL+C (sigint)
 process.on('SIGINT', function() {
     console.log("Gracefully shutting down from  SIGINT (Crtl-C)");
