@@ -58,7 +58,7 @@
                         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                     </div>
                     <div class="modal-body" style="text-align: justify;">
-                        <img style="float:left;padding:10px" alt="" id="myImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" />
+                        <img style="float:left;padding:10px" alt="" id="myImg" src="img/logo.png />
                         <span id="myDesc"></span>
                         <br clear="both"/>
                     </div>
@@ -68,17 +68,26 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
         <script src="js/jquery.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/data.js"></script>
         <script>
+
             $(function() {
+
                 var list = $('#list');
                 for (var i = 0; i < data.length; i++) {
-                    var t = ['<a href="#" class="list-group-item " data-toggle="modal" data-target="#myModal" data-id="', data[i].id, '">',
-                        '<h3 class="list-group-item-heading">', '<img src="', data[i].path, '" height="60" />&nbsp;', data[i].name, '</h3>',
+                    var t = [
+                        '<a href="#" class="list-group-item " data-toggle="modal" data-target="#myModal" data-id="', 
+                        data[i].id, 
+                        '">',
+                        '<h3 class="list-group-item-heading">', 
+                        '<img src="', 
+                        data[i].path, 
+                        '" height="60" />&nbsp;', 
+                        data[i].name, 
+                        '</h3>',
                         '</a>'].join('');
                     list.append(t);
                 }
