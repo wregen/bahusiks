@@ -1,13 +1,17 @@
 {
+  "name": "Bahusiks",
   "description": "Test application",
+  "author": "W.Regenczuk <W.Regenczuk@yahoo.com>",
   "version": "0.0.1",
   "private": false,
   "dependencies": {
     "connect": "*"
   },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
   "scripts": {
     "start": "node app.js"
-  },
-  "name": "Bahusiks",
-  "author": "W.Regenczuk <W.Regenczuk@yahoo.com>"
+  }
 }
