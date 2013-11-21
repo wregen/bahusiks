@@ -1,0 +1,15 @@
+{
+  "description": "Test application",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "flatiron": "*",
+    "ecstatic": "*",
+    "union": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "name": "Bahusiks",
+  "author": "W.Regenczuk <W.Regenczuk@yahoo.com>"
+}
