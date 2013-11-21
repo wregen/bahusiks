@@ -215,5 +215,5 @@ pip-log.txt
 .mr.developer.cfg
 
 #node
-node_modules/
-nbproject/
+/node_modules
+/nbproject
