@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "private": false,
   "dependencies": {
-    "express": "*",
-    "ecstatic": "*"
+    "connect": "*"
   },
   "scripts": {
     "start": "node app.js"
