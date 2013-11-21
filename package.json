@@ -2,6 +2,7 @@
   "name": "Bahusiks",
   "description": "Test application",
   "author": "W.Regenczuk <W.Regenczuk@yahoo.com>",
+  "repository": "https://github.com/wregen/bahusiks/",
   "version": "0.0.1",
   "private": false,
   "dependencies": {
